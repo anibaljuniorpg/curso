@@ -9,7 +9,8 @@ RUN chmod +x mvnw
 RUN ./mvnw clean package -DskipTests
 
 # Etapa final (runtime)
-FROM eclipse-temurin:21-jdk
+FROM openjdk:25-jdk
+
 
 WORKDIR /app
 EXPOSE 8080
