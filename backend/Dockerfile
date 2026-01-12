@@ -1,27 +1,18 @@
-FROM ubuntu:latest AS build
+# Etapa de build
+FROM eclipse-temurin:21-jdk AS build
 
-# Instalar dependências e Maven
-RUN apt-get update && \
-    apt-get install -y openjdk-21-jdk maven
-
-# Criar diretório de trabalho
 WORKDIR /app
 
-# Copiar arquivos do projeto
 COPY . .
 
-# Compilar o projeto (sem testes, se quiser mais rápido)
-RUN mvn clean install -DskipTests
+RUN ./mvnw clean package -DskipTests
 
-# Imagem final com JDK 21
-FROM openjdk:21-jdk-slim
+# Etapa final (runtime)
+FROM eclipse-temurin:21-jdk
 
 WORKDIR /app
 EXPOSE 8080
 
-# Copiar o .jar gerado da etapa de build
 COPY --from=build /app/target/*.jar app.jar
 
-
-# Executar a aplicação
 ENTRYPOINT ["java", "-jar", "app.jar"]
