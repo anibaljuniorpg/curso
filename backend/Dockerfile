@@ -9,7 +9,9 @@ RUN chmod +x mvnw
 RUN ./mvnw clean package -DskipTests
 
 # Etapa final (runtime)
-FROM openjdk:25-jdk
+FROM eclipse-temurin:21-jdk AS build
+
+
 
 
 WORKDIR /app
