@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:8080';
+const API_URL = 'https://curso-deploy.onrender.com';
 
 export async function fetchApi(path, options = {}) {
     const response = await fetch(`${API_URL}/${path}`, {
