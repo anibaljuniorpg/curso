@@ -2,12 +2,14 @@ package com.curso.curso.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "curso")
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
 public class Curso {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,4 +19,6 @@ public class Curso {
     @ManyToOne
     @JoinColumn(name = "id_aluno")
     private Aluno aluno;
+
+    
 }

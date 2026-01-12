@@ -1,0 +1,86 @@
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+  }
+
+  .form {
+    max-width: 900px;
+    width: 100%;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  .alunos-form {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    flex: 1 1 500px;
+  }
+
+  table, th, td {
+    border: 1px solid #333;
+  }
+
+  th, td {
+    padding: 8px;
+    text-align: left;
+  }
+
+  th {
+    background-color: #f0f0f0;
+  }
+
+  .selecionado {
+    background-color: #d1e7fd;
+  }
+
+  .formulario-aluno {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 300px;
+    gap: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+  }
+
+  .botoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .botoes button {
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: rgba(0, 89, 255, 0.384);
+  }
+
+  .botoes button:hover {
+    background-color: rgba(0, 89, 255, 1);
+    color: white;
+  }
+
+  .btnIncluir {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  .btnIncluir:hover {
+    background-color: #45a049;
+  }
